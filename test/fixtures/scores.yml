@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  handsPlayed: 
+  handsWon: 
+  handsLost: 
+  handsDrawn: 1
+
+two:
+  handsPlayed: 
+  handsWon: 
+  handsLost: 
+  handsDrawn: 1
