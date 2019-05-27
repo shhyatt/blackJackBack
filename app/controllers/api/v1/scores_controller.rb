@@ -1,9 +1,15 @@
 class Api::V1::ScoresController < ApplicationController
+  before_action :find_score, only: [:update, :show]
 
   def index
-    @score = Score.all
-    render json: @score
+    @scores = Score.all
+    render json: @scores
   end
+
+  def show
+    render json: @score, status: :accepted
+  end 
+
 
   def update
     @score.update(score_params)
@@ -18,10 +24,10 @@ class Api::V1::ScoresController < ApplicationController
   private
 
   def score_params
-    params.require(:score).permit(:hands_played, :hands_won, :hands_lost, :hands_drawn)
+    params.require(:score).permit(:handsPlayed, :handsWon, :handsLost, :handsDrawn)
   end
 
   def find_score
     @score = Score.find(params[:id])
-  end 
+  end
 end
